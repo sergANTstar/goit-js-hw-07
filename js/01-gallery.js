@@ -33,15 +33,16 @@ const imageOpen = (e) => {
     if (e.target.tagName !== "IMG") {
       return;
     }
-    const modal = basicLightbox.create(
-      `<img src="${e.target.dataset.source}" width="1400" height="900">`
+
+    const instance = basicLightbox.create(
+      `<img src="${e.target.dataset.source}" width="1082" height="721">`
     );
   
-    modal.show();
+    instance.show();
   
     function onKeydown(e) {
       if (e.code === "Escape") {
-        modal.close();
+        instance.close();
         window.removeEventListener("keydown", onKeydown);
       }
     }
