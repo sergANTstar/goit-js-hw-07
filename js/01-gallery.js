@@ -2,7 +2,7 @@ import { galleryItems } from './gallery-items.js';
 // Change code below this line
 
 
-const galleryImg = document.querySelector('body');
+const galleryImg = document.querySelector('p');
 
 function galleryItemsMake (galleryItems) { 
     
@@ -18,14 +18,12 @@ function galleryItemsMake (galleryItems) {
             </a>
         </li>`}).join('');
 
-        document.querySelector('div').remove();
-
+       
         return `<ul class="gallery">${li}<ul/>`
-
+  
 }
 
-galleryImg.childNodes[1].insertAdjacentHTML('afterend', (galleryItemsMake(galleryItems)));
-
+galleryImg.insertAdjacentHTML('afterend', (galleryItemsMake(galleryItems)));
 
 const imageOpen = (e) => {
     e.preventDefault();
@@ -49,5 +47,8 @@ const imageOpen = (e) => {
     window.addEventListener("keydown", onKeydown);
   };
 
-  galleryImg.childNodes[2].addEventListener('click', imageOpen);
+  
+  const gallery = document.querySelector('.gallery');
+  gallery.addEventListener('click', imageOpen);
+  
 
